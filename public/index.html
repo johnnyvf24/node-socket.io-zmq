@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example Client</title>
+  </head>
+  <body>
+    Example Client
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://localhost:3000');
+    socket.on('notification', function(data) {
+      var elem = document.createElement('div');
+      elem.innerHTML += JSON.stringify(data, null, 2);
+      document.body.appendChild(elem);
+    });
+  </script>
+</html>
