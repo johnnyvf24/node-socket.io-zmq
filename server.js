@@ -8,7 +8,6 @@ const io = require('socket.io')(http);
 
 app.use(express.static(path.join(__dirname, './public')));
 
-
 http.listen(port, () => {
   console.log(`express server listening on port ${port}`);
 });
